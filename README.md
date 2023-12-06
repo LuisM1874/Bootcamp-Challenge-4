@@ -1,7 +1,4 @@
-# Bootcamp-Challenge-4
-Bootcamp Challenge 4
-
-Javascript Game Challenge
+# Javascript Game Challenge
 
 ## User Story
 
