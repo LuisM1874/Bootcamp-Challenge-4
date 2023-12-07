@@ -67,6 +67,23 @@ function myQuestions() {
       });
   };
 
+  // Check answers and time deduction if incorrect
+  function timeCheck() {
+    if (this.value !== questions[Index].answer) {
+      time -= 10;
+      if (time < 0) {
+        time = 0;
+      }
+
+    }
+    Index++;
+    if (Index === questions.length) {
+      quizEnd();
+    } else {
+      myQuestions();
+    }
+};
+
 
 
 
