@@ -23,3 +23,6 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
 ```
+
+Deployed site : https://luism1874.github.io/JS-Game/
+Source code : https://github.com/LuisM1874/JS-Game
