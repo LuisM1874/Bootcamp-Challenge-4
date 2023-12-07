@@ -84,6 +84,46 @@ function myQuestions() {
     }
 };
 
+// End quiz 
+function quizEnd() {
+  clearInterval(timerId);
+  var endScreenEl = document.getElementById("quiz-end");
+  endScreenEl.removeAttribute("class");
+  var finalScoreEl = document.getElementById("score-final");
+  finalScoreEl.textContent = time;
+  questionsEl.setAttribute("class", "hide");
+}
+
+function clockTick() {
+  time--;
+  timing.textContent = time;
+  if (time <= 0) {
+    quizEnd();
+  }
+};
+
+// Leaderboard 
+function saveLeaderboard() {
+  var name = nameEl.value;
+  if (name !== "") {
+    var leaderboard = JSON.parse(window.localStorage.getItem("leaderboard")) || [];
+    var newScore = {
+      score: time,
+      name: name
+    };
+    leaderboard.push(newScore);
+    window.localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+
+    console.log("leaderboard scores", leaderboard.sort((a,b)=> b.score - a.score));
+  }
+}
+
+function checkForEnter(event) {
+  if (event.key === "Enter") {
+      saveLeaderboard();
+  }
+}
+nameEl.onkeyup = checkForEnter
 
 
 
