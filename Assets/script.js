@@ -42,6 +42,37 @@ var Index = 0;
 var time = questions.length * 10;
 var timerId;
 
+// Function for quiz to start
+function quizStart() {
+    timerId = setInterval(clockTick, 1000);
+    timing.textContent = time;
+    var landingScreenEl = document.getElementById("start-screen");
+    landingScreenEl.setAttribute("class", "hide");
+    questionsEl.removeAttribute("class");
+    myQuestions();
+};
+
+// Questions loop
+function myQuestions() {
+    var currentQuestion = questions[Index];
+    var promptEl = document.getElementById("question-words")
+      promptEl.textContent = currentQuestion.prompt;
+      choicesEl.innerHTML = "";
+      currentQuestion.options.forEach(function(choice, i) {
+          var choiceBtn = document.createElement("button");
+          choiceBtn.setAttribute("value", choice);
+          choiceBtn.textContent = i + 1 + ". " + choice;
+          choiceBtn.onclick = timeCheck;
+          choicesEl.appendChild(choiceBtn);
+      });
+  };
+
+
+
+
+
+
+  
 
 
 
