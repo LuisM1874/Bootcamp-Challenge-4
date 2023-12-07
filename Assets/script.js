@@ -126,6 +126,12 @@ function checkForEnter(event) {
 nameEl.onkeyup = checkForEnter
 
 
+// Save score
+enterBtn.onclick = saveLeaderboard;
+
+// Start Button 
+startBtn.onclick = quizStart;
+
 
 
 
