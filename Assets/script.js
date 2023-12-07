@@ -28,6 +28,20 @@ var questions = [
     },
 ];
 
+// Global Variables 
+var timing = document.querySelector("#timer");
+var questionsEl = document.querySelector("#questions");
+var choicesEl = document.querySelector("#options");
+var nameEl = document.querySelector("#name");
+var feedbackEl = document.querySelector("#feedback");
+var enterBtn = document.querySelector("#submit-score");
+var startBtn = document.querySelector("#start");
+var reStartBtn = document.querySelector("#restart");
+
+var Index = 0;
+var time = questions.length * 10;
+var timerId;
+
 
 
 
